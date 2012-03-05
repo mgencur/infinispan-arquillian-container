@@ -19,10 +19,11 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.infinispan.arquillian.model;
+package org.infinispan.arquillian.core;
 
 import java.net.InetAddress;
 
+import org.infinispan.arquillian.model.ServerModuleAttributes;
 import org.infinispan.arquillian.utils.MBeanObjectsProvider;
 import org.infinispan.arquillian.utils.MBeanServerConnectionProvider;
 import org.infinispan.arquillian.utils.MBeanUtils;

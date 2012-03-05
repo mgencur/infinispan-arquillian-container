@@ -19,28 +19,32 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.infinispan.arquillian.model;
+package org.infinispan.arquillian.core;
 
 import java.net.InetAddress;
 
+import org.infinispan.arquillian.model.ServerModuleAttributes;
 import org.infinispan.arquillian.utils.MBeanObjectsProvider;
 import org.infinispan.arquillian.utils.MBeanServerConnectionProvider;
 import org.infinispan.arquillian.utils.MBeanUtils;
 
 /**
- * Holds HotRod server module's Internet address and port number. Can be retrieved inside a test to
- * find out on which address/port the HotRod server module is running.
+ * Holds REST server module's inet address and context path. Can be retrieved inside 
+ * a test to find out on which contextPath the REST server module is running. Available only for
+ * the Enterprise Data Grid, not for a standalone Infinispan server.
  * 
  * @author <a href="mailto:mgencur@redhat.com">Martin Gencur</a>
  * 
  */
-public class HotRodEndpoint
+public class RESTEndpoint
 {
+   private final String contextPath = "/rest";
+
    private MBeanServerConnectionProvider provider;
    
    private MBeanObjectsProvider mBeans;
 
-   public HotRodEndpoint(MBeanServerConnectionProvider provider, MBeanObjectsProvider mBeans)
+   public RESTEndpoint(MBeanServerConnectionProvider provider, MBeanObjectsProvider mBeans)
    {
       this.provider = provider;
       this.mBeans = mBeans;
@@ -48,9 +52,9 @@ public class HotRodEndpoint
 
    /**
     * 
-    * Retrieves an Internet address on which the HotRod server module is running.
+    * Retrieves an Internet address on which the REST server module is running.
     * 
-    * @return the Internet address on which the HotRod server module is running
+    * @return the Internet address on which the REST server module is running
     */
    public InetAddress getInetAddress()
    {
@@ -68,21 +72,12 @@ public class HotRodEndpoint
 
    /**
     * 
-    * Retrieves a port on which the HotRod server module is running.
+    * Retrieves a context path on which the REST server module is running.
     * 
-    * @return the port on which the HotRod server module is running
+    * @return the context path on which the REST server module is running
     */
-   public int getPort()
+   public String getContextPath()
    {
-      String port;
-      try
-      {
-         port = MBeanUtils.getMBeanAttribute(provider, mBeans.getHorRodServerMBean(), ServerModuleAttributes.PORT);
-      }
-      catch (Exception e)
-      {
-         throw new RuntimeException("Could not retrieve HotRod port", e);
-      }
-      return Integer.parseInt(port);
+      return contextPath;
    }
 }
