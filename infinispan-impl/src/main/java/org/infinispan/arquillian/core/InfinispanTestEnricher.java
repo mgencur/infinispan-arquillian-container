@@ -36,6 +36,8 @@ import org.infinispan.arquillian.core.SecurityActions;
  */
 public class InfinispanTestEnricher implements TestEnricher
 {
+   private SecurityActions sa; 
+    
    @Inject
    @SuiteScoped
    private InstanceProducer<InfinispanContext> infinispanContext;
