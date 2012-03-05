@@ -48,6 +48,10 @@ import org.infinispan.arquillian.utils.MBeanObjectsProvider.Domain;
  */
 public class EDGServer extends AbstractRemoteInfinispanServer
 {
+   private HotRodEndpoint hrEndpoint; 
+   private MemCachedEndpoint mcEndpoint; 
+   private RESTEndpoint restEndpoint; 
+    
    private MBeanObjectsProvider mBeans;
    
    private InetAddress managementAddress;
