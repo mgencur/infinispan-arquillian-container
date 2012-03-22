@@ -23,7 +23,6 @@ package org.infinispan.arquillian.core;
 
 import java.net.InetAddress;
 
-import org.infinispan.arquillian.model.ServerModuleAttributes;
 import org.infinispan.arquillian.utils.MBeanObjectsProvider;
 import org.infinispan.arquillian.utils.MBeanServerConnectionProvider;
 import org.infinispan.arquillian.utils.MBeanUtils;
