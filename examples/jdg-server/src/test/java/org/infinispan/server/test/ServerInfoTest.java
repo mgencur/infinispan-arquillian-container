@@ -29,7 +29,7 @@ import org.junit.runner.RunWith;
 
 /**
  * An example test that shows/uses information about Infinispan embedded in a
- * JBossAS 7+ (Enterprise Data Grid). In relation to using standalone Infinispan
+ * JBossAS 7+ (JBoss Data Grid). In relation to using standalone Infinispan
  * there is also a REST endpoint available and all server endpoints are available
  * simultaneously. Furthermore, names of default caches/cache managers are
  * different from those in standalone Infinispan.
