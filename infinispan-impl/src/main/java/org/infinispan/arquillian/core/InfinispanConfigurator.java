@@ -117,7 +117,7 @@ public class InfinispanConfigurator
       if (infinispanContext.get() != null) {
          AbstractRemoteInfinispanServer server = (AbstractRemoteInfinispanServer) infinispanContext.get().get(RemoteInfinispanServer.class, event.getContainer().getContainerConfiguration().getContainerName());
          if (server != null)
-            server.invalidateMBeanProvider();
+            server.reconnect();
       }
    }
 }

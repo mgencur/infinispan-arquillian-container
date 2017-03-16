@@ -32,8 +32,9 @@ public abstract class AbstractRemoteInfinispanServer implements RemoteInfinispan
     * @return a new or existing MBeanServerConnectionProvider instance
     */
    protected abstract MBeanServerConnectionProvider createOrGetProvider();
-   
-   protected void invalidateMBeanProvider() 
+
+   @Override
+   public void reconnect()
    {
       this.provider = null;
    } 

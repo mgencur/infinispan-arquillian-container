@@ -97,5 +97,10 @@ public interface RemoteInfinispanServer
     */
    public RESTEndpoint getRESTEndpoint();
 
+   /**
+    * Refreshes JMX connection to the remote server. This needs to be called when
+    * the server is restarted outside Arquillian (i.e. via management API of the server)
+    */
+   public void reconnect();
    //public WebSocketEndpoint getWebSocketEndpoint();
 }
